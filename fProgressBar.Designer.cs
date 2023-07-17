@@ -1,6 +1,6 @@
 ﻿namespace ProgressBar2Forms
 {
-    partial class fShow
+    partial class fProgressBar
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.button_Cancel = new System.Windows.Forms.Button();
+            this.labelNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar
@@ -49,11 +50,23 @@
             this.button_Cancel.UseVisualStyleBackColor = true;
             this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.BackColor = System.Drawing.SystemColors.Control;
+            this.labelNumber.Location = new System.Drawing.Point(239, 17);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(35, 13);
+            this.labelNumber.TabIndex = 3;
+            this.labelNumber.Text = "label1";
+            this.labelNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 83);
+            this.Controls.Add(this.labelNumber);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.progressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -66,6 +79,7 @@
             this.TopMost = true;
             this.Load += new System.EventHandler(this.fShow_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -73,5 +87,6 @@
 
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button button_Cancel;
+        private System.Windows.Forms.Label labelNumber;
     }
 }

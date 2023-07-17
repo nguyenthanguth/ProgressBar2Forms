@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProgressBar2Forms
@@ -16,48 +17,67 @@ namespace ProgressBar2Forms
             Close();
         }
 
+        private void button_Run_Click(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+
         public static int Start;
         public static int Total;
 
-        private void button_Run_Click(object sender, EventArgs e)
-        {
-            Start = 0;
-            Total = 0;
-
-            fShow f = new fShow();
-            f.Show();
-
-            Thread t = new Thread(UpdateData);
-            t.IsBackground = true;
-            t.Start();
-        }
-
         private void UpdateData() // truyền dữ liệu liên tục qua fShow
         {
-            Start = Convert.ToInt32(textBox1.Text);
+            Start = Convert.ToInt32(textBox1.Text); // = 0
             Total = Convert.ToInt32(textBox2.Text);
-            while (true)
+            if (Total > Start)
             {
-                if (fShow.isPause == false)
-                {
-                    Start++;
+                fProgressBar f = new fProgressBar();
+                f.Show();
 
-                    // code here
-                    {
-                        Thread.Sleep(10);
-                    }
+                #region case 1
+                //Thread t = new Thread(() =>
+                //{
+                //    for (int i = 0; i < Total; i++)
+                //    {
+                //        if (fShow.isPause == false)
+                //        {
+                //            #region code here
+                //            {
+                //                Thread.Sleep(1000);
+                //            }
+                //            #endregion
+                //            Start++;
+                //        }
+                //        else
+                //        {
+                //            return;
+                //        }
+                //    }
+                //});
+                //t.Start();
+                #endregion
 
-                    if (Start == Total)
-                    {
-                        //MessageBox.Show("Done fMain");
-                        return;
-                    }
-                }
-                else
+                #region case 2
+                Task.Run(() =>
                 {
-                    //MessageBox.Show("Pause fMain");
-                    return;
-                }
+                    for (int i = 0; i < Total; i++)
+                    {
+                        if (fProgressBar.isCancel == false)
+                        {
+                            #region code here
+                            {
+                                Thread.Sleep(1);
+                            }
+                            #endregion
+                            Start++;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                });
+                #endregion
             }
         }
     }
