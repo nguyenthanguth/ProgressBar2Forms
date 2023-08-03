@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,29 +13,20 @@ namespace ProgressBar2Forms
 
         public static bool isCancel = false;
 
-        private void fShow_Load(object sender, EventArgs e)
+        private void fProgressBar_Load(object sender, EventArgs e)
         {
             isCancel = false;
             Task.Run(() =>
             {
-                while (true)
+                while (isCancel == false)
                 {
-                    if (isCancel == false)
-                    {
-                        int startNumber = fMain.Start;
-                        int totalNumber = fMain.Total;
-                        labelNumber.Text = $"{startNumber}/{totalNumber}";
-                        progressBar.Value = (int)Math.Round((double)startNumber / totalNumber * 100);
+                    int startNumber = fMain.startProgressBar;
+                    int totalNumber = fMain.totalProgressBar;
+                    int value = Convert.ToInt32(Math.Round((double)startNumber / totalNumber * 100));
+                    Invoke(new Action(() => { progressBar.Value = value; }));
 
-                        if (startNumber == totalNumber)
-                        {
-                            Close();
-                            break;
-                        }
-                    }
-                    else
+                    if (startNumber == totalNumber)
                     {
-                        Close();
                         break;
                     }
                 }
@@ -46,7 +36,6 @@ namespace ProgressBar2Forms
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             isCancel = true;
-            Close();
         }
     }
 }

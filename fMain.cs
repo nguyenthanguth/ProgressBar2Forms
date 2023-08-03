@@ -22,14 +22,14 @@ namespace ProgressBar2Forms
             UpdateData();
         }
 
-        public static int Start;
-        public static int Total;
+        public static int startProgressBar;
+        public static int totalProgressBar;
 
-        private void UpdateData() // truyền dữ liệu liên tục qua fShow
+        private async void UpdateData() // truyền dữ liệu liên tục qua fShow
         {
-            Start = Convert.ToInt32(textBox1.Text); // = 0
-            Total = Convert.ToInt32(textBox2.Text);
-            if (Total > Start)
+            startProgressBar = Convert.ToInt32(textBox1.Text); // = 0
+            totalProgressBar = Convert.ToInt32(textBox2.Text);
+            if (totalProgressBar > startProgressBar)
             {
                 fProgressBar f = new fProgressBar();
                 f.Show();
@@ -58,18 +58,18 @@ namespace ProgressBar2Forms
                 #endregion
 
                 #region case 2
-                Task.Run(() =>
+                await Task.Run(() =>
                 {
-                    for (int i = 0; i < Total; i++)
+                    for (int i = 0; i < totalProgressBar; i++)
                     {
                         if (fProgressBar.isCancel == false)
                         {
                             #region code here
                             {
-                                Thread.Sleep(1);
+                                Thread.Sleep(10);
                             }
                             #endregion
-                            Start++;
+                            startProgressBar++;
                         }
                         else
                         {
@@ -78,6 +78,8 @@ namespace ProgressBar2Forms
                     }
                 });
                 #endregion
+
+                f.Hide();
             }
         }
     }
