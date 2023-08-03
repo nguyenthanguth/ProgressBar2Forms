@@ -13,10 +13,10 @@ namespace ProgressBar2Forms
 
         public static bool isCancel = false;
 
-        private void fProgressBar_Load(object sender, EventArgs e)
+        private async void fProgressBar_Load(object sender, EventArgs e)
         {
             isCancel = false;
-            Task.Run(() =>
+            await Task.Run(() =>
             {
                 while (isCancel == false)
                 {
