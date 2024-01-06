@@ -64,6 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 76);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.progressBar);
@@ -75,7 +76,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tekla Structure - Cancel";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.fProgressBar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

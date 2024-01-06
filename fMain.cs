@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading;
+﻿using ProgressBar2Forms.Properties;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +12,21 @@ namespace ProgressBar2Forms
             InitializeComponent();
         }
 
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            tbStart.Text = Settings.Default.saveStart;
+            tbEnd.Text = Settings.Default.saveEnd;
+            tbTimeDelay.Text = Settings.Default.saveTime;
+        }
+
+        private void fMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.saveStart = tbStart.Text;
+            Settings.Default.saveEnd = tbEnd.Text;
+            Settings.Default.saveTime = tbTimeDelay.Text;
+            Settings.Default.Save();
+        }
+
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -19,68 +34,33 @@ namespace ProgressBar2Forms
 
         private void button_Run_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            Run();
         }
 
-        public static int startProgressBar;
-        public static int totalProgressBar;
-
-        private async void UpdateData() // truyền dữ liệu liên tục qua fShow
+        private async void Run()
         {
-            startProgressBar = Convert.ToInt32(textBox1.Text); // = 0
-            totalProgressBar = Convert.ToInt32(textBox2.Text);
-            if (totalProgressBar > startProgressBar)
+            fProgressBar progressBar = new fProgressBar();
+            progressBar.Show();
+
+            int totalCountObject = Convert.ToInt32(tbEnd.Text);
+            for (int i = 1; i <= totalCountObject; i++)
             {
-                fProgressBar f = new fProgressBar();
-                f.Show();
-
-                #region case 1
-                //Thread t = new Thread(() =>
-                //{
-                //    for (int i = 0; i < Total; i++)
-                //    {
-                //        if (fShow.isPause == false)
-                //        {
-                //            #region code here
-                //            {
-                //                Thread.Sleep(1000);
-                //            }
-                //            #endregion
-                //            Start++;
-                //        }
-                //        else
-                //        {
-                //            return;
-                //        }
-                //    }
-                //});
-                //t.Start();
-                #endregion
-
-                #region case 2
-                await Task.Run(() =>
+                if (progressBar.IsCancel)
                 {
-                    for (int i = 0; i < totalProgressBar; i++)
-                    {
-                        if (fProgressBar.isCancel == false)
-                        {
-                            #region code here
-                            {
-                                Thread.Sleep(10);
-                            }
-                            #endregion
-                            startProgressBar++;
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                });
-                #endregion
+                    break;
+                }
 
-                f.Hide();
+                progressBar.UpdateProgress(i, totalCountObject);
+                await Task.Delay(Convert.ToInt32(1));
+
+                // công việc thực hiện...
+                for (int j = 1; j < 1000000; j++)
+                {
+                    Console.WriteLine(j);
+                }
             }
+
+            progressBar.Close();
         }
     }
 }

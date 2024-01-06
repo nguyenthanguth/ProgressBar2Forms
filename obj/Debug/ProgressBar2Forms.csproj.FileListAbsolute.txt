@@ -16,7 +16,6 @@ C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\bin\Debug\ProgressBar2F
 C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.csproj.AssemblyReference.cache
 C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.csproj.SuggestedBindingRedirects.cache
 C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.fMain.resources
-C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.fShow.resources
 C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.Properties.Resources.resources
 C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.csproj.GenerateResource.cache
 C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.csproj.CoreCompileInputs.cache
@@ -34,3 +33,4 @@ C:\Users\Admin\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.cs
 C:\Users\Admin\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.exe
 C:\Users\Admin\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.pdb
 C:\Users\Admin\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.fProgressBar.resources
+C:\Users\InuYasha-MEV\Documents\GitHub\ProgressBar2Forms\obj\Debug\ProgressBar2Forms.fProgressBar.resources

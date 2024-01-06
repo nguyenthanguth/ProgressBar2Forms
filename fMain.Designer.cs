@@ -28,57 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button_Run = new System.Windows.Forms.Button();
-            this.button_Cancel = new System.Windows.Forms.Button();
+            this.tbStart = new System.Windows.Forms.TextBox();
+            this.tbEnd = new System.Windows.Forms.TextBox();
+            this.btRun = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbTimeDelay = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbStart
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "0";
+            this.tbStart.Location = new System.Drawing.Point(120, 12);
+            this.tbStart.Name = "tbStart";
+            this.tbStart.Size = new System.Drawing.Size(100, 20);
+            this.tbStart.TabIndex = 0;
+            this.tbStart.Text = "0";
+            this.tbStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // tbEnd
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "10";
+            this.tbEnd.Location = new System.Drawing.Point(120, 38);
+            this.tbEnd.Name = "tbEnd";
+            this.tbEnd.Size = new System.Drawing.Size(100, 20);
+            this.tbEnd.TabIndex = 0;
+            this.tbEnd.Text = "10";
+            this.tbEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_Run
+            // btRun
             // 
-            this.button_Run.Location = new System.Drawing.Point(120, 145);
-            this.button_Run.Name = "button_Run";
-            this.button_Run.Size = new System.Drawing.Size(75, 23);
-            this.button_Run.TabIndex = 1;
-            this.button_Run.Text = "Run";
-            this.button_Run.UseVisualStyleBackColor = true;
-            this.button_Run.Click += new System.EventHandler(this.button_Run_Click);
+            this.btRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btRun.Location = new System.Drawing.Point(102, 131);
+            this.btRun.Name = "btRun";
+            this.btRun.Size = new System.Drawing.Size(75, 23);
+            this.btRun.TabIndex = 1;
+            this.btRun.Text = "Run";
+            this.btRun.UseVisualStyleBackColor = true;
+            this.btRun.Click += new System.EventHandler(this.button_Run_Click);
             // 
-            // button_Cancel
+            // btCancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(201, 145);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_Cancel.TabIndex = 2;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = true;
-            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancel.Location = new System.Drawing.Point(183, 131);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.TabIndex = 2;
+            this.btCancel.Text = "Cancel";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(12, 12);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 0;
+            this.textBox3.Text = "Start";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(12, 38);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 0;
+            this.textBox4.Text = "End";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbTimeDelay
+            // 
+            this.tbTimeDelay.Location = new System.Drawing.Point(120, 64);
+            this.tbTimeDelay.Name = "tbTimeDelay";
+            this.tbTimeDelay.Size = new System.Drawing.Size(100, 20);
+            this.tbTimeDelay.TabIndex = 0;
+            this.tbTimeDelay.Text = "10";
+            this.tbTimeDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(12, 64);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Text = "Time delay seconds";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 194);
-            this.Controls.Add(this.button_Cancel);
-            this.Controls.Add(this.button_Run);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(270, 166);
+            this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.btRun);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbTimeDelay);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbEnd);
+            this.Controls.Add(this.tbStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -87,6 +138,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMain";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMain_FormClosing);
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,10 +147,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button_Run;
-        private System.Windows.Forms.Button button_Cancel;
+        private System.Windows.Forms.TextBox tbStart;
+        private System.Windows.Forms.TextBox tbEnd;
+        private System.Windows.Forms.Button btRun;
+        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbTimeDelay;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 
