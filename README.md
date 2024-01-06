@@ -1,2 +1,2 @@
 # ProgressBar2Forms
- Transfer data between 2 winforms
+## Show running progress on another form
